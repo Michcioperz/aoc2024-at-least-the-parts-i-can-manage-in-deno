@@ -40,10 +40,10 @@ export function solveA(input: string): number {
 
 export const testAnswerA = 2;
 
-export function solveB(input: string): number {
-  return parse(input).filter(composedProperty(2)).length;
-}
+// export function solveB(input: string): number {
+//   return parse(input).filter(composedProperty(2)).length;
+// }
 
-export const testAnswerB = 4;
+// export const testAnswerB = 4;
 
 Prelude.main(solveA);
