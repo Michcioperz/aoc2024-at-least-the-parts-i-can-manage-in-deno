@@ -59,9 +59,7 @@ export function solveB(input: string): number {
   let next: Record<number, number> = {};
   let current: Record<number, number> = Object.fromEntries(
     board.flatMap((row, y) =>
-      row.flatMap((cell, x) =>
-        (cell == 9) ? [[numberer(y, x), 1]] : []
-      )
+      row.flatMap((cell, x) => (cell == 9) ? [[numberer(y, x), 1]] : [])
     ),
   );
   for (let iter = 9; iter > 0; iter--) {

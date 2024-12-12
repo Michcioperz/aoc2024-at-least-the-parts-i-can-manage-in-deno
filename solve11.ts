@@ -32,7 +32,7 @@ function solve(input: string, iters: number): number {
 }
 
 export function solveA(input: string): number {
-    return solve(input, 25);
+  return solve(input, 25);
 }
 
 export const testAnswerA = 55312;
@@ -45,10 +45,10 @@ function subsolve(stone: number, itersLeft: number): number {
 }
 
 export function solveB(input: string): number {
-//   return parse(input).map((stone) => subsolve(stone, 75)).reduce((a, b) =>
-//     a + b
-//   );
-    return solve(input, 75);
+  //   return parse(input).map((stone) => subsolve(stone, 75)).reduce((a, b) =>
+  //     a + b
+  //   );
+  return solve(input, 75);
 }
 
 Prelude.main(solveA, solveB);

@@ -42,3 +42,36 @@ export class UndyingQueue<T> {
     return this.array[this.head++];
   }
 }
+
+export function* range(
+  start: number,
+  stop: number,
+  step: number = 1,
+): Generator<number, void, unknown> {
+  if (step > 0) {
+    for (let i = start; i < stop; i += step) {
+      yield i;
+    }
+  } else {
+    for (let i = start; i > stop; i += step) {
+      yield i;
+    }
+  }
+}
+
+export interface Numberizer<T> {
+  numberize(t: T): number;
+  denumberize(n: number): T;
+}
+
+export class NumberizedSet<T, Converter extends Numberizer<T>> {
+  readonly converter: Converter;
+  private set: Set<number>;
+  constructor(converter: Converter, source: Iterable<T> = []) {
+    this.converter = converter;
+    this.set = new Set();
+    for (const item of source) {
+      this.set.add(converter.numberize(item));
+    }
+  }
+}
